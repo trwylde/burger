@@ -1,0 +1,26 @@
+{
+  "name": "burger",
+  "version": "1.0.0",
+  "description": "A restaurant app that let's you submit your burger creation to the menu, then devour it!",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trwylde/burger.git"
+  },
+  "author": "trw",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trwylde/burger/issues"
+  },
+  "homepage": "https://github.com/trwylde/burger#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "mysql": "^2.16.0"
+  }
+}
