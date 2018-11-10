@@ -31,7 +31,7 @@ function objToSql(ob) {
 
 // Displays all burgers in the database
 var orm = {
-  all: function(tableInput, cb) {
+  selectAll: function(tableInput, cb) {
     var queryString = "SELECT * FROM " + tableInput + ";";
     connection.query(queryString, function(err, result) {
       if (err) {
@@ -42,7 +42,7 @@ var orm = {
   },
 
   // Add a burger to the database
-  create: function(table, cols, vals, cb) {
+  insertOne: function(table, cols, vals, cb) {
     var queryString = "INSERT INTO " + table;
 
     queryString += " (";
@@ -63,7 +63,7 @@ var orm = {
     });
   },
   // Set devoured status to "true"
-  update: function(table, objColVals, condition, cb) {
+  updateOne: function(table, objColVals, condition, cb) {
     var queryString = "UPDATE " + table;
 
     queryString += " SET ";
@@ -82,7 +82,7 @@ var orm = {
   },
 
   // Delete a burger from database
-  delete: function(table, condition, cb) {
+  deleteOne: function(table, condition, cb) {
     var queryString = "DELETE FROM " + table;
     queryString += " WHERE ";
     queryString += condition;
