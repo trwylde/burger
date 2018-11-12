@@ -1,0 +1,62 @@
+
+<div class="container">
+  <div class="card text-center text-white bg-warning">
+    <div class="card-header">
+      <h2>Eat the Burger</h2>
+    </div>
+    <div class="card-body">
+      <form class="create-form">
+        <div class="form-group">
+          <input type="text" id="newBurger" name="burger">
+        </div>
+        <button type="submit" class="btn btn-success" id="submit"><span class="fa fa-thumbs-up">Add Burger</span></button>
+        <p>Enter your custom creation and then click "Add Burger"</p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="/assets/img/burger.png" alt="Card image cap">
+        <div class="card-body">
+          <h2>Burger Menu</h2>
+
+            <ul>
+              {{#each burgers}}
+                {{#unless devoured}}
+                  <span><strong> {{this.id}} - {{this.burger_name}} </strong></span>
+                    <button type="button" class="eatburger btn btn-warning" id ="eatbutton" data-id="{{this.id}}" data-newDevoured="{{devour}}"><span class="fa fa-cutlery"></span></button>
+                  <hr>
+                {{/unless}}
+              {{/each}}
+            </ul>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="/assets/img/devour_burger.png" alt="Card image cap">
+        <div class="card-body">
+          <h2>Devoured Burgers</h2>
+
+            <ul>
+              {{#each burgers}}
+                {{#if devoured}}
+                  <span><strong> {{this.id}} - {{this.burger_name}} </strong></span>
+                    <button type="button" class="trashburger btn btn-danger" id ="trashbutton" data-id="{{this.id}}" data-newDevoured="{{devour}}"><span class="fa fa-trash"></span></button>
+                  <hr>
+                {{/if}}
+              {{/each}}
+            </ul>
+
+        </div>
+      </div>
+    </div>
+  </div> <!--Closes Row-->
+</div> <!--Closes Container-->
+
